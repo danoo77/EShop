@@ -24,7 +24,7 @@ export class AddToCartComponent implements OnInit {
   ngOnInit() {
   }
 
-  orderItem(quantity: number){
+  orderItem(){
     let result : OrderResult = new OrderResult();
     this.orderService.orderProduct(this.itemIdentifier, this.quantity).subscribe(p => {
       this.isOrdered = true;
