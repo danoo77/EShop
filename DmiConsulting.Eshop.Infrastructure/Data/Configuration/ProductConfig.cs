@@ -15,7 +15,7 @@ namespace DmiConsulting.Eshop.Infrastructure.Data.Configuration
             builder.Property(p => p.Id).IsRequired();
             builder.Property(p => p.Description).IsRequired();
             builder.Property(p => p.Name).IsRequired().HasMaxLength(250);
-            builder.Property(p => p.Price).IsRequired();
+            builder.Property(p => p.Price).IsRequired().HasColumnType("decimal(18,2)");
             //builder.Property(p => p.Category).IsRequired();
             builder.HasOne(p => p.Category).WithMany(c => c.Products).HasForeignKey("CategoryName");
             builder.HasMany(p => p.OrderItems).WithOne(o => o.OrderedProduct);

@@ -14,7 +14,7 @@ namespace DmiConsulting.Eshop.Infrastructure.Data.Configuration
             builder.HasKey(o => o.Id);
             builder.Property(o => o.Id).IsRequired();
             //builder.Property(o => o.OrderedProduct).IsRequired();
-            builder.Property(o => o.Price).IsRequired();
+            builder.Property(o => o.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(o => o.Quantity).IsRequired();
             builder.Ignore(o => o.TotalPrice);
             //builder.Property(o => o.Order).IsRequired();
