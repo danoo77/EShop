@@ -1,0 +1,9 @@
+<form class="form-inline">
+    <div class="form-group">
+        <input type="number" [(ngModel)]="quantity" [formControl]="quantityControl" name="quantity" class="form-control quantity" id="quantity" min="1" value=1> 
+        <button type="submit" class="btn btn-primary" (click)="orderItem()">Order now!</button>
+        
+    </div>
+</form>
+
+

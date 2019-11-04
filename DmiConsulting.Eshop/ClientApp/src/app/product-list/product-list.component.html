@@ -1,0 +1,34 @@
+<div *ngIf="products && products.length > 0 && products.length < 4">
+  <div class="row">
+    <div class="col-md-{{12/products.length}}" class="col-md-3"><app-product-cart *ngIf="products[0]" [product]="products[0]"></app-product-cart></div>
+    <div class="col-md-{{12/products.length}}"><app-product-cart *ngIf="products[1]" [product]="products[0]"></app-product-cart></div>
+    <div class="col-md-{{12/products.length}}"><app-product-cart *ngIf="products[2]" [product]="products[0]"></app-product-cart></div>
+    <div class="col-md-{{12/products.length}}"><app-product-cart *ngIf="products[3]" [product]="products[0]"></app-product-cart></div>
+  </div>
+</div>
+
+<div *ngIf="products && products.length >=4 ">
+
+<div *ngFor="let item of products; let i = index">
+        <div *ngIf="i % 4 == 0" class="row">
+            <div class="col-md-3">
+                <app-product-cart [product]="item"></app-product-cart>
+            </div>
+            <div class="col-md-3">
+          <div *ngIf="i + 1 < products.length"><app-product-cart [product]="products[i + 1]"></app-product-cart></div>
+        </div>
+        <div class="col-md-3">
+          <div *ngIf="i + 2 < products.length"><app-product-cart [product]="products[i + 2]"></app-product-cart></div>
+        </div>
+        <div class="col-md-3">
+          <div *ngIf="i + 3 < products.length"><app-product-cart [product]="products[i + 3]"></app-product-cart></div>
+        </div>
+          
+        </div>
+      </div>
+      </div>
+
+
+
+
+
